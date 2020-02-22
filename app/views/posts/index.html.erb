@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+    #bossy code
+    #<div><a href='<%= "/posts/#{post.id}" %>'><%= post.title %></a></div>
+    #works, but hard coded path
+    # <div><%= link_to post.title, "/posts/#{post.id}" %></div>
+    #Rails is smart enough to know that if you pass in the post object as an argument, it will automatically use the ID attribute
+    # <div><%= link_to post.title, post_path(post.id) %></div>
+    <div><%= link_to post.title, post_path(post) %></div>
+<% end %>
